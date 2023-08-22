@@ -66,7 +66,7 @@ public class TemplateChunkProvider extends ChunkSource {
     public ChunkAccess getChunk(int chunkX, int chunkZ, @NotNull ChunkStatus requiredStatus, boolean load)
     {
         return chunks.computeIfAbsent(new ChunkPos(chunkX, chunkZ), p -> {
-            return new EmptyLevelChunk(world, p, world.getUncachedNoiseBiome(0, 0, 0));
+            return new EmptyLevelChunk(p, p, world.getUncachedNoiseBiome(0, 0, 0));
         });
     }
 
